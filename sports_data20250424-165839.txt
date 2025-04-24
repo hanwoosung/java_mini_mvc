@@ -1,0 +1,6 @@
+전체 선수 리스트
+playerName='ㅁㅁㅁ', position='ㄴㄴㄴ'
+전체 팀 목록 And 소속 선수
+ㅁㅁㅁㅁ
+playerName='ㅁㅁㅁ', position='ㄴㄴㄴ'
+
