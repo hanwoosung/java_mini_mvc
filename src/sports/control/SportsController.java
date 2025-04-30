@@ -79,11 +79,17 @@ public class SportsController implements Closeable {
                 } else {
                     view.log("잘못된 팀 번호");
                 }
+
             }
             case 99 -> {
                 view.log("프로그램 종료");
                 view.close();
-                FileUtils.createFile(currentInformation.getPlayers().getAll(), currentInformation.getTeams().getAll(), "sports_data");
+                FileUtils.createFile("sports_data", true,
+                        FileUtils.FileOutParamter.create("전체 선수 리스트")
+                                .addAll(currentInformation.getPlayers().getAll(), true),
+                        FileUtils.FileOutParamter.create("전체 팀 리스트")
+                                .addAll(currentInformation.getTeams()));
+
                 currentInformation.dispose();
             }
             default -> view.log("잘못된 입력입니다.");

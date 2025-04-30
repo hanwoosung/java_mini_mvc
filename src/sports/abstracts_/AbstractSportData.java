@@ -5,8 +5,9 @@ import interfaces_.MyLogger;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class AbstractSportData<T> {
+public class AbstractSportData<T> implements  Iterable<T> {
     private ArrayList<T> teams;
 
     public MyLogger logger=null;
@@ -83,4 +84,8 @@ public class AbstractSportData<T> {
         return new ArrayList<>(teams);
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return teams.iterator();
+    }
 }
